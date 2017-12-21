@@ -1,0 +1,12 @@
+*~
+*pyc
+*.yaml
+icon
+bannerImg
+constats.py
+.idea/
+dump.rdb
+*.swp
+settings.py
+log/*
+ngrok-client/config.py

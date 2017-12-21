@@ -1,0 +1,28 @@
+#!/usr/bin/env python
+# -*- coding: UTF-8 -*-
+
+MAIN_HOST = 'ingrok.***.com'
+MAIN_PROT = 4443
+
+TUNNEL_LIST = []
+# http 类型
+# 以下表示 idev.ingrok.****.com 映射到本地  127.0.0.1:8899
+body = {}
+body['protocol'] = 'http'
+body['subdomain'] = 'idev'
+body['hostname'] = "%s.%s" % (body['subdomain'], MAIN_HOST)
+body['rport'] = 0
+body['lhost'] = '127.0.0.1'  # 本地ip
+body['lport'] = 7700  # 本地端口
+TUNNEL_LIST.append(body)  # 加入渠道队列
+
+# # tcp 类型
+# # 以下将 55497  映射到本地  127.0.0.1:22 端口
+# body = {}
+# body['protocol'] = 'tcp'
+# body['hostname'] = ''
+# body['subdomain'] = ''
+# body['rport'] = 11513
+# body['lhost'] = '127.0.0.1'
+# body['lport'] = 22
+# TUNNEL_LIST.append(body)  # 加入渠道队列

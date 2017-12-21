@@ -1,0 +1,12 @@
+server:
+    container_name: "ngrok-server"
+    image: ngrok_server_image
+    ports:
+        - "8082:80"
+        - "4432:443"
+        - "4443:4443"
+    volumes:
+        - ./data:/myfiles
+    environment:
+        - DOMAIN="ingrok.****.com"
+    command: /bin/sh /server.sh
